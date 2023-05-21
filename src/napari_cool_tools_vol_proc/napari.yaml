@@ -1,0 +1,4 @@
+name: napari-cool-tools-vol-proc
+display_name: COOL Tools Volume Processing
+contributions:
+  commands:
