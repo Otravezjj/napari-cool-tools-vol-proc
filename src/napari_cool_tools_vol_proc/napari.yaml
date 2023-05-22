@@ -2,3 +2,16 @@ name: napari-cool-tools-vol-proc
 display_name: COOL Tools Volume Processing
 contributions:
   commands:
+    - id: napari-cool-tools-vol-proc.avg_bscans
+      title: Average Bscans 
+      python_name: napari_cool_tools_vol_proc._averaging_tools:average_bscans
+    - id: napari-cool-tools-vol-proc.avg_per_bscan
+      title: Average per Bscan
+      python_name: napari_cool_tools_vol_proc._averaging_tools:average_per_bscan
+  widgets:
+    - command: napari-cool-tools-vol-proc.avg_bscans
+      display_name: Average Bscans
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.avg_per_bscan
+      display_name: Average per Bscan
+      autogenerate: true
