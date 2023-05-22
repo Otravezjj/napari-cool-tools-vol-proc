@@ -8,8 +8,7 @@ from napari.layers import Image, Layer
 from napari.types import ImageData
 
 def average_bscans(vol:Image, scans_per_avg:int=5) -> Layer:
-    """Function to map image/B-scan values to a specific range between min_val and max_val.
-
+    """Function averaging every scans_per_avg images/B-scans togehter.
     Args:
         vol (Image): vol representing volumetric or image stack data
         scans_per_avg (int): number of consecutive images/B-scans to average together
@@ -27,15 +26,15 @@ def average_bscans(vol:Image, scans_per_avg:int=5) -> Layer:
     return layer
 
 def average_per_bscan(vol: Image, scans_per_avg: int = 5, axis = 0, trim: bool = True) -> Layer:
-    """Accepts an n-dimesional array and an odd integer of scans to average together per b-scan
-    and returns an n-dimensional array where each slice is an average of the surrounding
-    bscans from the original array
+    """Function averaging every scans_per_avg images/B-scans centered around each image/b-scan.
+    Args:
+        vol (Image): vol representing volumetric or image stack data
+        scans_per_avg (int): number of consecutive images/B-scans to average together
+        trim: (bool): Flag indicating that ends should be trimmed if image/B-scan index is less than (scans_per_avg - 1 / 2)
 
-    The array length may very slightly depending on how edge cases are handled
-    
-    vol = volume data
-    
-    scans_per_avg = number of b-scans to average together currently assumes an odd number"""
+    Returns:
+        Layer volume where values at each index each slice is an average of the surrounding bscans from vol
+    """
 
     data = vol.data
     name = f"{vol.name}_5_per"
