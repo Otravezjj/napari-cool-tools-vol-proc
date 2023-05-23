@@ -1,11 +1,11 @@
 """
 This module contains code for calculating and manipulating projections of volumetric data.
 """
-from typing import List, Tuple
+from typing import List
 from napari.utils.notifications import show_info
 from napari.layers import Image, Layer
 from napari.qt.threading import thread_worker
-from napari_cool_tools_img_proc import torch, viewer, device
+from napari_cool_tools_io import viewer
 
 def mip(img:Image,yx=True,zy=False,xz=False):
     """Generate maximum intensity projections (MIP) along selected orthoganal image planes from structural OCT data.
