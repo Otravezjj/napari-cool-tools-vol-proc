@@ -37,7 +37,7 @@ def average_per_bscan(vol: Image, scans_per_avg: int = 5, axis = 0, trim: bool =
     """
 
     data = vol.data
-    name = f"{vol.name}_5_per"
+    name = f"{vol.name}_{scans_per_avg}_per"
     add_kwargs = {"name":name}
     layer_type = "image"
     
