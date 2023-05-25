@@ -2,10 +2,10 @@
 This module contains code for loading .prof files wihout .xml metadata
 """
 import numpy as np
+from tqdm import tqdm
 from skimage.measure import block_reduce
 from napari.utils.notifications import show_info
 from napari.layers import Image, Layer
-from napari.types import ImageData
 
 def average_bscans(vol:Image, scans_per_avg:int=5) -> Layer:
     """Function averaging every scans_per_avg images/B-scans togehter.
@@ -50,9 +50,9 @@ def average_per_bscan(vol: Image, scans_per_avg: int = 5, axis = 0, trim: bool =
 
         averaged_slices = []
 
-        for i in range(length):
+        for i in tqdm(range(length),desc="Avg per B-scan"):
             if i >= offset and i < length - offset:
-                print(f"Averaging slices...\nGenerating new slice by averaging slices {i-offset} through {i+offset} of {length-1}")
+                #print(f"Averaging slices...\nGenerating new slice by averaging slices {i-offset} through {i+offset} of {length-1}")
                 
                 if axis == 0:
                     start0 = i-offset
@@ -148,7 +148,8 @@ def average_per_bscan(vol: Image, scans_per_avg: int = 5, axis = 0, trim: bool =
 
                         pass
                 else:
-                    print(f"You shouldn't be here {average_per_bscan}!!")
+                    #print(f"You shouldn't be here {average_per_bscan}!!")
+                    pass
 
         averaged_array = np.stack(averaged_slices, axis=axis)
 
