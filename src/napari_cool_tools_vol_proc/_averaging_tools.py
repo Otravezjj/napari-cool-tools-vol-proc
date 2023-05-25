@@ -44,7 +44,7 @@ def average_per_bscan(vol: Image, scans_per_avg: int = 5, axis = 0, trim: bool =
     if scans_per_avg % 2 == 1:
         offset = int((scans_per_avg - 1) / 2)
 
-        print(f"shape: {data.shape}, axis: {axis}, length of axis {data.shape[axis]}")
+        #print(f"shape: {data.shape}, axis: {axis}, length of axis {data.shape[axis]}")
 
         length = data.shape[axis]
 
