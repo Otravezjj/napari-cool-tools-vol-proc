@@ -11,6 +11,15 @@ contributions:
     - id: napari-cool-tools-vol-proc.mip
       title: Maximum Intensity Projection (Orthogonal)
       python_name: napari_cool_tools_vol_proc._projection_tools:mip
+    - id: napari-cool-tools-vol-proc.circle_mask
+      title: Draw Circle Mask (Center to Radius)
+      python_name: napari_cool_tools_vol_proc._measuring_tools:draw_circle_mask
+    - id: napari-cool-tools-vol-proc.calc_z1
+      title: Calculate Zone 1 Volumes
+      python_name: napari_cool_tools_vol_proc._measuring_tools:calc_zone1
+    - id: napari-cool-tools-vol-proc.calc_label_vols
+      title: Calculate Label Volumes
+      python_name: napari_cool_tools_vol_proc._measuring_tools:calc_label_volumes
   widgets:
     - command: napari-cool-tools-vol-proc.avg_bscans
       display_name: Average Bscans
@@ -20,4 +29,13 @@ contributions:
       autogenerate: true
     - command: napari-cool-tools-vol-proc.mip
       display_name: MIP (Orthogonal)
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.circle_mask
+      display_name: Draw Circle
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.calc_z1
+      display_name: Calc Z1
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.calc_label_vols
+      display_name: Calculate Label Volumes
       autogenerate: true
