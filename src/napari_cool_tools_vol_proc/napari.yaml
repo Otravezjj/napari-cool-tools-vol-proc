@@ -20,6 +20,18 @@ contributions:
     - id: napari-cool-tools-vol-proc.calc_label_vols
       title: Calculate Label Volumes
       python_name: napari_cool_tools_vol_proc._measuring_tools:calc_label_volumes
+    - id: napari-cool-tools-vol-proc.reshape_vol
+      title: Reshape Volume Data
+      python_name: napari_cool_tools_vol_proc._slicing_shaping_tools:reshape_vol
+      category: Slice and Shape
+    - id: napari-cool-tools-vol-proc.split_vol
+      title: Split Volume Data
+      python_name: napari_cool_tools_vol_proc._slicing_shaping_tools:split_vol
+      category: Slice and Shape
+    - id: napari-cool-tools-vol-proc.stack_selected
+      title: Stack Selected
+      python_name: napari_cool_tools_vol_proc._slicing_shaping_tools:stack_selected
+      category: Slice and Shape
   widgets:
     - command: napari-cool-tools-vol-proc.avg_bscans
       display_name: Average Bscans
@@ -38,4 +50,13 @@ contributions:
       autogenerate: true
     - command: napari-cool-tools-vol-proc.calc_label_vols
       display_name: Calculate Label Volumes
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.reshape_vol
+      display_name: Reshape Volume Data
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.split_vol
+      display_name: Split Volume Data
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.stack_selected
+      display_name: Stack Selected
       autogenerate: true
