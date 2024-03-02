@@ -17,7 +17,7 @@ def average_bscans(vol:Image, scans_per_avg:int=5) -> Layer:
         Layer volume where values have been averaged every scans_per_avg images/B-scans along the depth dimension
     """
     data = vol.data
-    name = f"{vol.name}_avg_5"
+    name = f"{vol.name}_avg_{scans_per_avg}"
     add_kwargs = {"name":name}
     layer_type = "image"
     averaged_array = block_reduce(data, block_size=(scans_per_avg,1,1), func= np.mean)
