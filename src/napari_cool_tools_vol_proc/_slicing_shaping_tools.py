@@ -204,18 +204,44 @@ def split_vol(vol:Image, subvolumes:int=3, axis:int=1, debug:bool=False) -> Laye
     
     return layers_out
 
-def stack_selected(axis:int=0, debug:bool=False)->Layer:
+def stack_selected(name:str='stacked_layers', axis:int=0, debug:bool=False)->Layer:
     """"""
     current_selection = list(viewer.layers.selection)
+    current_selection.sort(key=lambda x: x.name)
     data_stack = []
     
     for layer in current_selection:
         data_stack.append(layer.data)
 
     out_data = np.stack(data_stack,axis)
-    name = f"Stacked_Selection_Axis_{axis}"
+    name = f"{name}_axis_{axis}"
     add_kwargs = {"name": f"{name}"}
     layer_type = current_selection[0].as_layer_data_tuple()[2]
     layer = Layer.create(out_data,add_kwargs,layer_type)
     
-    return layer   
+    return layer
+
+def stack_selected_2D(name:str='stacked_layers') -> Layer:
+    """"""
+    # optional kwargs for viewer.add_* method
+    add_kwargs = {"name": f"{name}"}
+
+
+    # optional layer type argument
+    layer_type = "image"
+
+    sel = list(viewer.layers.selection)
+    sel.sort(key=lambda x: x.name)
+    sel_layer_types_res = map(lambda x: x.as_layer_data_tuple()[2],sel)
+    sel_layer_types = list(sel_layer_types_res)
+    set_types = set(sel_layer_types)
+
+    if len(set_types) == 1:
+        sel_data_res = map(lambda x: x.data.squeeze(), sel)
+        sel_data = list(sel_data_res)
+        new_data = np.stack(sel_data,axis=0)
+        layer_type = set_types.pop()
+        layer = Layer.create(new_data,add_kwargs,layer_type)
+        return layer
+    else:
+        raise Exception("Something's Wrong!! Fixit !!")   
