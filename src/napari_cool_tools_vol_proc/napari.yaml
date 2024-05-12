@@ -32,6 +32,18 @@ contributions:
       title: Stack Selected
       python_name: napari_cool_tools_vol_proc._slicing_shaping_tools:stack_selected
       category: Slice and Shape
+    - id: napari-cool-tools-vol-proc.stack_selected_2D
+      title: Stack Selected 2D
+      python_name: napari_cool_tools_vol_proc._slicing_shaping_tools:stack_selected_2D
+      category: Slice and Shape
+    - id: napari-cool-tools-vol-proc.isolate_labeled_volume
+      title: Isolate Labeled Volume
+      python_name: napari_cool_tools_vol_proc._masking_tools:isolate_labeled_volume
+      category: Masking
+    - id: napari-cool-tools-vol-proc.find_brightest_avg_pixels
+      title: Find brightest avg pixels
+      python_name: napari_cool_tools_vol_proc._masking_tools:find_brightest_avg_pixels
+      category: Masking
   widgets:
     - command: napari-cool-tools-vol-proc.avg_bscans
       display_name: Average Bscans
@@ -59,4 +71,13 @@ contributions:
       autogenerate: true
     - command: napari-cool-tools-vol-proc.stack_selected
       display_name: Stack Selected
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.stack_selected_2D
+      display_name: Stack Selected 2D
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.isolate_labeled_volume
+      display_name: Isolate Labeled Volume
+      autogenerate: true
+    - command: napari-cool-tools-vol-proc.find_brightest_avg_pixels
+      display_name: Find brightest avg pixels
       autogenerate: true
