@@ -1,5 +1,5 @@
 """
-This module contains code for loading .prof files wihout .xml metadata
+This module contains code for averaging 2D slices
 """
 import numpy as np
 from tqdm import tqdm
